@@ -1,0 +1,27 @@
+{
+  "name": "connect4",
+  "version": "1.0.0",
+  "description": "connect4 online game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazenaboelanin/Connect4-Online-Game.git"
+  },
+  "keywords": [
+    "connect4",
+    "web",
+    "game"
+  ],
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "author": "Mazen Aboelanin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mazenaboelanin/Connect4-Online-Game/issues"
+  },
+  "homepage": "https://github.com/mazenaboelanin/Connect4-Online-Game#readme"
+}
