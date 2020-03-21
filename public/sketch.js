@@ -5,14 +5,34 @@ const rows = 7;
 const cols = 7 ; 
 const platformMargin = 2;
 
+function playNow() 
+{
+    let myCanv = document.getElementById('defaultCanvas0');
+    myCanv.style.display ="block";
+    let btnPlay = document.getElementById('btn-play');
+    btnPlay.style.display ="none";
+    let btnQuit = document.getElementById('btn-quit');
+    btnQuit.style.display ="block";
+}
+function quitGame(){
+    let myCanv = document.getElementById('defaultCanvas0');
+    myCanv.style.display ="none";
+    let btnQuit = document.getElementById('btn-quit');
+    btnQuit.style.display ="none";
+    let btnPlay = document.getElementById('btn-play');
+    btnPlay.style.display ="block";
+}
 // 300px in x and in y  , 25 in diameter
 let piece = new Piece(xwidth / 2, yheight / 2, diameter, {r:250, g:10, b:0});
 
 let platform = new Platform (rows, cols, 0, 0, 50, {r:0, g:0,b:0}, platformMargin);
 
 function setup(){
-    let canv = createCanvas(xwidth,yheight);
-    //canv.postion(300 , 100);
+    //let canv = 
+    createCanvas(xwidth,yheight); 
+    //canv.postion(0, 0, 'relative');
+    //select('canvas').position(451.2, 230);
+    
 }
 
 function draw(){
@@ -52,3 +72,5 @@ function mouseClicked() {
     //   value = 0;
     // }
   }
+
+  

@@ -1,0 +1,29 @@
+body
+{
+    max-width: 600px;
+    margin: auto;
+}
+.jumbotron 
+{
+   /* max-width: 600px;*/
+}
+.btn-color
+{
+    background-color: #0000FF;
+    color: white;
+}
+.btn-color:hover
+{
+    background-color: #0000FF;
+    color: white;
+    border: 1.5px solid #000;
+}
+
+.p5Canvas
+{
+    display: none;
+}
+#btn-quit 
+{
+    display: none;
+}
