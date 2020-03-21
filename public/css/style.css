@@ -17,6 +17,7 @@ body
     background-color: #0000FF;
     color: white;
     border: 1.5px solid #000;
+    cursor: pointer;
 }
 
 .p5Canvas
