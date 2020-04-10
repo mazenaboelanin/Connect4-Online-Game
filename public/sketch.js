@@ -1,3 +1,4 @@
+
 const diameter = 50; 
 const xwidth = 600; 
 const yheight = 600 ;
@@ -23,24 +24,48 @@ function quitGame(){
     btnPlay.style.display ="block";
 }
 // 300px in x and in y  , 25 in diameter
-let piece = new Piece(xwidth / 2, yheight / 2, diameter, {r:250, g:10, b:0});
+let piece = new Piece(xwidth / 2, yheight / 2, diameter, {r:250, g:250, b:10});
 
 let platform = new Platform (rows, cols, 0, 0, 50, {r:0, g:0,b:0}, platformMargin);
 
+let player1 = new Player (0, {r:250, g:250, b:10}, true, [piece]);
+
+let player2 = new Player (1, {r:250, g:10, b:0},false, []);
+
+let currentPlayer = null ;
 function setup(){
     //let canv = 
     createCanvas(xwidth,yheight); 
     //canv.postion(0, 0, 'relative');
     //select('canvas').position(451.2, 230);
-    
+
+    givePieces(player1, rows * cols);
+    givePieces(player2, rows * cols);
 }
 
 function draw(){
     //background color 
     background(0,0,255);
     platform.show();
+    //piece.show();
+    currentPlayer = defineCurrentPlayer(player1, player2);
+    piece = currentPlayer.getCurrentPiece();
     piece.show();
+    //textSize(16);
+    //text('Font Size 16', 10, 90);
+    textSize(32);
+    text('Player ' + currentPlayer.id, 10, 30);
     movementOfPiece(piece);
+}
+
+let defineCurrentPlayer = (p1,p2) => {
+    return p1.hasTurn ? p1:p2;
+}
+
+let givePieces = (player, amount) => {
+
+    let range = [...Array(amount).keys()]; 
+    player.pieces = range.map((e)=> new Piece(width /2, height /2, diameter, player.color));
 }
 
 //movement
@@ -57,7 +82,19 @@ let putPieceOnPlatform = (piece, platform) => {
 
     // console.log(mapX, mapY);
     // console.log(floor(mapX), floor(mapY));
-    platform.platform[floor(mapX)][floor(mapY)] = new Piece(piece.x, piece.y, piece.diameter, piece.color);
+
+    //console.log(mapY);
+    //Rule1
+    if (floor(mapY) === rows - 1 || platform.existsNeighborAtBottom(floor(mapX),floor(mapY))){
+        platform.platform[floor(mapX)][floor(mapY)] = new Piece(piece.x, piece.y, piece.diameter, piece.color);
+
+        currentPlayer.hasTurn = false;
+
+        if(currentPlayer === player2){
+            player1.hasTurn = true;
+        }
+    }
+
     //platform.insert(piece)
 }
 
