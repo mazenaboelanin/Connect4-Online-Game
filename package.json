@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mazenaboelanin/Connect4-Game.git"
+    "url": "git+https://github.com/mazenaboelanin/Connect4-Online-Game.git"
   },
   "keywords": [
     "connect4",
@@ -22,7 +22,7 @@
   "author": "Mazen Aboelanin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mazenaboelanin/Connect4-Game/issues"
+    "url": "https://github.com/mazenaboelanin/Connect4-Online-Game/issues"
   },
-  "homepage": "https://github.com/mazenaboelanin/Connect4-Game#readme"
+  "homepage": "https://github.com/mazenaboelanin/Connect4-Online-Game#readme"
 }
